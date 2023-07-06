@@ -1,13 +1,100 @@
-body {
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'vazir';
+  src: url('../public/assets/fonts/vazir.eot') format('eot');
+  src: url('../public/assets/fonts/vazir.ttf') format('truetype'),
+        url('../public/assets/fonts/vazir.woff') format('woff');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  direction: rtl;
+  font-family: 'vazir';
+}
+nav{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+.container{
+  width: 1500px;
+  margin: auto;
+  padding: 0 30px;
+  border-bottom: 1px solid rgb(55, 55, 55);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-logo img{
+  width: 60px;
+  height: 50px;
+  margin: 10px;
+}
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list li{
+  margin-left: 20px;
+}
+.nav-toggle{
+  display: none;
+  cursor: pointer;
+  border: 0;
+}
+.nav-links{
+  transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+}
+.nav-links .list{
+  display: flex;
+  align-items: center;
+}
+.nav-links .list li{
+  margin:0 20px;
+  font-size: 20px;
+}
+@media screen and (max-width: 767px) {
+  .nav-logo{
+    width: 100%;
+    direction: rtl;
+      }
+  .nav-toggle{
+    display: block !important;
+  }
+  .nav-links{
+    position: absolute;
+    top: 85px;
+    left: 0;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  .nav-links .list{
+    display: block;
+  }
+  .nav-links .list li{
+    padding: 15px;
+  }
+  .active{
+    height: 15rem;
+  }
 }
