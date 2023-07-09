@@ -1,12 +1,15 @@
+import { RouterProvider } from "react-router-dom";
 import Header from "./components/Header";
-import { DataContext } from "./context/UserContext";
+import { DataProvider } from "./context/UserContext";
+import { router } from "./router/Router";
 
 function App() {
   return (
-    <div >
-      <DataContext.Provider>
+    <div>
+      <DataProvider>
         <Header />
-      </DataContext.Provider>
+        <RouterProvider router={router} />
+      </DataProvider>
     </div>
   );
 }
